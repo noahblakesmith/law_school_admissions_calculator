@@ -3,8 +3,8 @@ import pickle
 from admissions import predict
 
 # Call pickle files
-columns = pickle.load(open('app/columns.pkl', 'rb'))
-logit = pickle.load(open('app/logit.sav', 'rb'))
+columns = pickle.load(open('columns.pkl', 'rb'))
+logit = pickle.load(open('logit.sav', 'rb'))
 
 # Define relevant variables
 schools = [i.strip('school_') for i in list(columns) if 'school_' in i]
@@ -16,7 +16,7 @@ app = Flask(__name__, template_folder="templates")
 # Default route set as 'home'
 @app.route('/home')
 def home():
-    return render_template('home.html', schools=schools) # Render home.html
+    return render_template('home.html', schools=[i.title() for i in schools]) # Render home.html
 
 
 
@@ -31,13 +31,13 @@ def classify_type():
         fee_waived = request.args.get('fee_waived') # Get parameters for petal width
         non_trad = request.args.get('non_trad')
         intl = request.args.get('intl')
-        school = request.args.get('school')
+        school = request.args.get('school').upper()
 
         # Get the output from the classification logit
         prediction = predict(gpa, lsat, urm, fee_waived, non_trad, intl, school)
 
         # Render the output in new HTML page
-        return render_template('output.html', variety=prediction)
+        return render_template('output.html', prediction=prediction, school=school.title())
     except:
         return 'Error'
 

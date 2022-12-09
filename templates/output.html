@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Flower Variety</title>
+        <title>Admission Probability</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <style>
@@ -34,7 +34,10 @@
             <div class="card" style="width: 400px">
                 <div class="card-content">
                     <div class="media">
-                        <div class="is-size-4 has-text-centered">{{ variety }}</div>
+                        <div class="is-size-4 has-text-centered">Law school: {{ school }}</div>
+                    </div>
+                    <div class="media">
+                        <div class="is-size-4 has-text-centered">Your chance: {{ prediction }}%</div>
                     </div>
                     <form action="home">
                         <div class="field">
