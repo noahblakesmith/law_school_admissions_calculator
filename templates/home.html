@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Law School Admissions Predictor</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html{
+            overflow: hidden;
+        }
+
+        body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-form-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>	
+<body>
+    <div id="login-form-container">
+        <form action="classify" method="GET">
+            <div class="card" style="width: 400px">
+            <div class="card-content">
+                <div class="media">
+                <div class="is-size-4 has-text-centered">Law School Admissions Predictor</div>
+                </div>
+                <div class="content">
+
+                <div class="field">
+                    <p class="control">
+                    GPA: <input class="input" type="number" min="0" max="4.30" step='0.01' name="gpa" id="gpa">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                    LSAT: <input class="input" type="number" min="120" max="180" step='1' name="lsat" id="lsat">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                    Are you black, Hispanic, or American Indian? <select class="select" name="urm" id="urm">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Have you received an application fee waiver? <select class="select" name="fee_waived" id="fee_waived">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                    </select>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Do you identify as a non-traditional applicant? <select class="select" name="non_trad" id="non_trad">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                    </select>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Are you an international student? <select class="select" name="intl" id="intl">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                    </select>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        <select name="school" id="school" method="GET" action="'">
+                            <option value="{{schools[0]}}" selected>{{schools[0]}}</option>
+                            {% for i in schools[1:] %}
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+                </div>
+                
+                <div class="field">
+                    <button class="button is-fullwidth is-rounded is-success">Submit</button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
