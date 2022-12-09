@@ -6,7 +6,6 @@ This app predicts the user's probability of being admitted to a law school based
 
 The app uses a logit model that was cross-validated using self-reported admissions data from LSD.law.
 
-
 ## Setup
 
 Create and activate a virtual environment:
@@ -30,7 +29,7 @@ pip install -r requirements.txt
 Run the web app locally:
 
 ```sh
-python server.py
+python routes.py
 ```
 
 Then go to the indicated URL followed by /input, e.g.,
