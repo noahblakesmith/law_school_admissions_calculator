@@ -33,6 +33,12 @@ Run the web app locally:
 python server.py
 ```
 
+Then go to the indicated URL followed by /input, e.g.,
+
+```sh
+http://127.0.0.1:5000/input
+```
+
 ## Testing
 
 ```sh

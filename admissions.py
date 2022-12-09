@@ -13,6 +13,7 @@ years = [i for i in list(columns) if 'year_' in i]
 
 # Define predict function
 def predict(a, b, c, d, e, f, g):
+
     user = pd.DataFrame(
         np.array(
             [a, b, c, d, e, f]
@@ -21,5 +22,6 @@ def predict(a, b, c, d, e, f, g):
         ).reshape(1, -1), 
         columns=columns[1:]
     )
+
     prediction = int(100 * logit.predict_proba(user).flatten()[1])
     return prediction
