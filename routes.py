@@ -13,7 +13,6 @@ logit = pickle.load(open('logit.sav', 'rb'))
 schools = [i.strip('school_') for i in list(columns) if 'school_' in i]
 years = [i for i in list(columns) if 'year_' in i]
 
-
 # Set default input route
 @app.route('/input')
 def input():
