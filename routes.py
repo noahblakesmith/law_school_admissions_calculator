@@ -1,7 +1,9 @@
 # Setup
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, Blueprint
 import pickle
 from admissions import predict
+
+routes = Blueprint("routes", __name__)
 
 # Call pickle files
 columns = pickle.load(open('columns.pkl', 'rb'))
@@ -40,7 +42,3 @@ def output():
     except:
 
         return 'Error. Please fill in all fields on previous page.'
-
-# Run the Flask server
-if(__name__=='__main__'):
-    app.run(debug=True)
