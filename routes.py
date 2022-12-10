@@ -3,6 +3,8 @@ from flask import Flask, request, render_template, jsonify
 import pickle
 from admissions import predict
 
+app = Flask(__name__, template_folder="templates")
+
 # Call pickle files
 columns = pickle.load(open('columns.pkl', 'rb'))
 logit = pickle.load(open('logit.sav', 'rb'))
@@ -11,7 +13,6 @@ logit = pickle.load(open('logit.sav', 'rb'))
 schools = [i.strip('school_') for i in list(columns) if 'school_' in i]
 years = [i for i in list(columns) if 'year_' in i]
 
-app = Flask(__name__, template_folder="templates")
 
 # Set default input route
 @app.route('/input')
