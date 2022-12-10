@@ -1,5 +1,5 @@
 # Setup
-from flask import Flask, request, render_template, jsonify, Blueprint
+from flask import Flask, request, render_template, jsonify
 import pickle
 from admissions import predict
 
