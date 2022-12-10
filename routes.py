@@ -3,11 +3,15 @@ from flask import Flask, request, render_template, jsonify, Blueprint
 import pickle
 from admissions import predict
 
+<<<<<<< HEAD
 <<<<<<< refs/remotes/heroku/master
 routes = Blueprint("routes", __name__)
 =======
 app = Flask(__name__, template_folder="templates")
 >>>>>>> Reconfigured for Heroku
+=======
+app = Flask(__name__, template_folder="templates")
+>>>>>>> master
 
 # Call pickle files
 columns = pickle.load(open('columns.pkl', 'rb'))
