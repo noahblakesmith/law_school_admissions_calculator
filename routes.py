@@ -43,5 +43,4 @@ def output():
         return 'Error. Please fill in all fields on previous page.'
 
 if(__name__=='__main__'):
-    my_app = create_app()
-    my_app.run(debug=True)
+    app.run(debug=True)
