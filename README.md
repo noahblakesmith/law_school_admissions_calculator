@@ -4,7 +4,7 @@
 
 This app is targeted at potential law school applicants and is designed for both mobile and desktop use. The user inputs data about himself/herself into the app, and then the app employs a logit with two-way fixed effects (year and school) to estimate the user's probability of admission to a chosen law school. The model was first estimated in the file model_estimation.ipynb, after which it was saved as a pickle file. (You can find measures of model accuracy in that file as well; I elected not to include this information in the final product, however, because I didn't think most users would be very interested.)
 
-The data used to train the model were self-reported admissions data from the website LSD.law. I spent considerable effort cleaning, merging, and appending data to construct the final data set, as well as conducting validity checks against aggregated official data reported by the American Bar Association. Moreover, I tested a variety of models using K-fold and time-series cross-validation techniques before arriving at my model. Please see [this repository](https://github.com/f2pHgty8hw/gbus_401_project/blob/master/Cleaning_Script.do) for the corresponding code.
+The data used to train the model were self-reported admissions data from the website LSD.law. I spent considerable effort cleaning, merging, and appending data to construct the final data set, as well as conducting validity checks against aggregated official data reported by the American Bar Association. Moreover, I tested a variety of models using K-fold and time-series cross-validation techniques before arriving at my model. Please see [this repository](https://github.com/f2pHgty8hw/law_school_admissions) for the corresponding code.
 
 ## Setup
 
