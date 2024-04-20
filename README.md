@@ -11,15 +11,15 @@ The data used to train the model were self-reported admissions data from the web
 Create and activate a virtual environment:
 
 ```sh
-conda create -n freestyle_project_env python
+conda create -n calc_env python
 
-conda activate freestyle_project_env
+conda activate calc_env
 ```
 
 Install package dependencies:
 
 ```sh
-cd ~/freestyle_project # Navigate to the root directory
+cd ~/law_school_admissions_calculator # Navigate to the root directory
 
 pip install -r requirements.txt
 ```
