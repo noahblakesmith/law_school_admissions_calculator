@@ -1,4 +1,4 @@
-# My Freestyle Project
+# Law School Admissions Calculator
 
 ## About
 
